@@ -1,0 +1,275 @@
+.App {
+  text-align: center;
+  background-color: pink;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.Loan-app-header {
+  margin-bottom: 40px;
+}
+
+.Retrieve-butt {
+  margin: 10px !important;
+}
+
+.Loan-app-header {
+  background: #a968e1; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0b031b,
+    rgb(100, 25, 137)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 150px;
+  color: white;
+}
+
+#loanCounter {
+  background-color: #4a00e0;
+  width: 90px;
+  margin: 0 auto;
+  opacity: 0.8;
+  color: white;
+  font-size: 13px;
+  border-radius: 2px;
+}
+
+#loanCounterInfo {
+  border: black 0.5px solid;
+  padding: 2px;
+  font-size: 8px;
+  position: relative;
+  bottom: -24px;
+  width: 221px;
+  margin: 0 auto;
+}
+
+.owner-special-buttons {
+  border: black solid 0.5px;
+  padding: 15px;
+  width: 309px;
+  margin: 20px auto;
+}
+
+h6 {
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.payDeposit-butt {
+  margin: 10px !important;
+}
+
+.retrieveFunds-butt {
+  margin: 10px 30px !important;
+}
+
+#payLoan {
+  position: relative !important;
+  left: 109px !important;
+}
+
+.line-1 {
+  position: relative;
+  top: -86px;
+
+  width: 15em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+  font-family: "Poppins", sans-serif;
+}
+
+.MuiButton-label {
+  font-family: "Poppins", sans-serif !important;
+}
+
+.account-address {
+  position: relative;
+  top: -171px;
+}
+
+.anim-typewriter {
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 17.5em;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.header-img {
+  height: 89px;
+  width: 100px;
+  position: relative;
+  bottom: -36px;
+  background-color: white;
+  border-radius: 85%;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.create-loan-form {
+  margin-top: 25px !important;
+  margin-bottom: 10px !important;
+  border-radius: 3px;
+  border: #4a00e0 solid 1px;
+  width: 20px;
+}
+.create-loan-form:hover {
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.3);
+}
+
+hr {
+  width: 148px;
+  height: 1px;
+  border-color: #4a00e0;
+  background: #4a00e0;
+  border-radius: 19px;
+}
+
+#interest,
+#borrower,
+#depositPercentage,
+#amount {
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.form-contents {
+  display: inline-grid;
+  padding: 0 20px;
+  margin-bottom: 30px;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  text-align: left;
+  margin-left: 15px;
+  padding-top: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.txReceipt-button {
+  margin: 30px !important;
+}
+
+.create-loan-form {
+  display: grid;
+  width: 300px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+.txReceipt-table {
+  position: relative;
+  right: -20%;
+  margin-top: 84px;
+}
+
+.retrieveLoan-table {
+  position: relative;
+  right: -20%;
+  margin: 35px;
+}
+
+.table-responsive {
+  margin-top: 30px !important;
+  width: 550px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+table.x {
+  margin-bottom: 15px;
+  border: 1px solid #a4a4a4;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.x td,
+table.x th {
+  border: 1px solid #aaaaaa;
+  padding: 3px 5px;
+}
+
+table.x tbody td {
+  font-size: 13px;
+}
+
+table.x tr:nth-child(even) {
+  background: #e2e2e2;
+}
+
+table.x thead {
+  background: #e7e7e7;
+  background: -moz-linear-gradient(top, #ededed 0%, #e9e9e9 66%, #e7e7e7 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #ededed 0%,
+    #e9e9e9 66%,
+    #e7e7e7 100%
+  );
+  background: linear-gradient(to bottom, #ededed 0%, #e9e9e9 66%, #e7e7e7 100%);
+  border-bottom: 2px solid #444444;
+}
+
+table.x thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+
+table.x tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  border-top: 2px solid #444444;
+}
+
+table.x tfoot td {
+  font-size: 14px;
+}
