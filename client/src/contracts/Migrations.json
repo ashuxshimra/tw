@@ -74,7 +74,7 @@
   "sourceMap": "36:500:2:-;;;196:52;8:9:-1;5:2;;;30:1;27;20:12;5:2;196:52:2;232:10;224:5;;:18;;;;;;;;;;;;;;;;;;36:500;;;;;;",
   "deployedSourceMap": "36:500:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;36:500:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;365:168;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;365:168:2;;;;;;;;;;;;;;;;;;;:::i;:::-;;86:36;;;:::i;:::-;;;;;;;;;;;;;;;;;;;61:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;254:105;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;254:105:2;;;;;;;;;;;;;;;;;:::i;:::-;;365:168;176:5;;;;;;;;;;;162:19;;:10;:19;;;158:26;;;428:19;461:11;428:45;;480:8;:21;;;502:24;;480:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;480:47:2;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;480:47:2;;;;183:1;158:26;365:168;:::o;86:36::-;;;;:::o;61:20::-;;;;;;;;;;;;;:::o;254:105::-;176:5;;;;;;;;;;;162:19;;:10;:19;;;158:26;;;344:9;317:24;:36;;;;158:26;254:105;:::o",
   "source": "pragma solidity >=0.4.21 <0.8.0;\r\n\r\ncontract Migrations {\r\n  address public owner;\r\n  uint public last_completed_migration;\r\n\r\n  modifier restricted() {\r\n    if (msg.sender == owner) _;\r\n  }\r\n\r\n  constructor() public {\r\n    owner = msg.sender;\r\n  }\r\n\r\n  function setCompleted(uint completed) public restricted {\r\n    last_completed_migration = completed;\r\n  }\r\n\r\n  function upgrade(address new_address) public restricted {\r\n    Migrations upgraded = Migrations(new_address);\r\n    upgraded.setCompleted(last_completed_migration);\r\n  }\r\n}\r\n",
-  "sourcePath": "C:\\Web3.0\\Velozity\\loan\\Loan-DApp\\contracts\\Migrations.sol",
+  "sourcePath": "C:\\Web3,Solidity, Blockchain\\Velozity work\\loan\\CompletedLoaner\\Loaner\\contracts\\Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -1481,8 +1481,8 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x7a973dC868133AeBF89bF9C691527A81aD3771F4",
-      "transactionHash": "0x372d32e41e48290345f4dc2729c257314f22787fcf91bb886cbd5573d85648ae"
+      "address": "0x0EA8611D3eB907aF39A017aa5508b3DBF57dA30D",
+      "transactionHash": "0x42adeb0daedf9dcb0fcc76cfa814a4287cb9948718bdb21eee96a5bd484de83e"
     },
     "11155111": {
       "events": {},
@@ -1543,10 +1543,16 @@
       "links": {},
       "address": "0x73e99eA7D4cD16e60D46e7946225816c575a4e31",
       "transactionHash": "0xb818d25d9cda29a5288ac3527b67e5347ac95b280abd9f5c2bc9e8156c40679c"
+    },
+    "1705831939370": {
+      "events": {},
+      "links": {},
+      "address": "0xd935809b585D43B70f074513Bf1932affad119De",
+      "transactionHash": "0x40aee1b0d1a27de414e0cb18fbeec58ca8844945ebca8337cb33b9d758e65105"
     }
   },
-  "schemaVersion": "3.4.4",
-  "updatedAt": "2023-11-27T09:03:54.136Z",
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-01-21T10:17:23.529Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

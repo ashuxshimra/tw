@@ -154,7 +154,7 @@ class App extends Component {
         gasUsed: tx.gasUsed,
       });
       this.handleLoanId();
-      this.showSuccessAlert("Loan created successfully, no fraud detected! ✅");
+      this.showSuccessAlert("Energy created successfully, no fraud detected, Ready to Trade! ✅");
     } catch (ex) {
       this.showErrorAlert("Fraud detected 🛑, cannot proceed! ");
       console.log(ex);
@@ -245,19 +245,19 @@ class App extends Component {
     let { accounts, contract, requiredDeposit, loanId } = this.state;
     const depositAmount = web3.utils.toWei(this.state.amount);
     console.log(this.state);
-    console.log("this is loandID" + loanId);
+    console.log("this is tradeID" + loanId);
     try {
       await contract.methods.payLoanDeposit(loanId).send({
         from: accounts[0],
         value: depositAmount,
       });
       this.showSuccessAlert(
-        "No Fraud Detected, amount deposited for borrowing successfully ✅"
+        "No Fraud Detected, Bidding amount deposited for energy trade successfully ✅"
       );
     } catch (err) {
       console.log(err);
       this.showErrorAlert(
-        "Fraud Detected 🛑, Please enter the adequate deposit amount to borrow money"
+        "Fraud Detected 🛑, Please enter the adequate bidding deposit amount to trade energy"
       );
     }
   };
@@ -270,12 +270,12 @@ class App extends Component {
         .payBackLoan(loanId)
         .send({ from: accounts[0], value: payBackAmount });
       this.showSuccessAlert(
-        "No Fraud Detected, Loan Repayment to lender successfull ✅ "
+        "No Fraud Detected, energy traded back to lender successfull ✅ "
       );
     } catch (err) {
       console.log(err);
       this.showErrorAlert(
-        "Fraud Detected 🛑, Please enter the adequate loan repayment amount as per loan agreement"
+        "Fraud Detected 🛑, Please enter the adequate energy trade back amount as per agreement"
       );
     }
   };
@@ -287,12 +287,12 @@ class App extends Component {
         .retrieveLoanFunds(loanId)
         .send({ from: accounts[0] });
       this.showSuccessAlert(
-        "No Fraud Detected, The adequate loan amount transfer successful ✅"
+        "No Fraud Detected, The adequate energy trade amount transfer successful ✅"
       );
     } catch (err) {
       console.log(err);
       this.showErrorAlert(
-        "Fraud Detected 🛑, Loan is not approved , please deposit the required amount as per agreement to retrive money"
+        "Fraud Detected 🛑, Trade is not approved , please deposit the required bid amount as per agreement to retrieve energy"
       );
     }
   };
@@ -397,14 +397,14 @@ class App extends Component {
             )}
         </div>
 
-        <div>This Loan has an ID of: {this.state.loanId}</div>
+        <div>This Energy Trade has an ID of: {this.state.loanId}</div>
         <Button
           className="Retrieve-butt"
           onClick={this.handleRetrieveLoans}
           variant="contained"
           color="default"
         >
-          Retrieve Loan
+          Retrieve Trade
         </Button>
         <div>
           <input
@@ -418,13 +418,13 @@ class App extends Component {
         <Table bordered responsive className="x">
           <thead>
             <tr>
-              <th>Loan Details</th>
+              <th>Energy Trade Details</th>
               <th>Values</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Full Loan Amount:</td>
+              <td>Full Energy Trade Amount:</td>
               <td>
                 {this.state.currentLoan
                   ? web3.utils.fromWei(this.state.currentLoan.fullAmount)
@@ -448,13 +448,13 @@ class App extends Component {
               </td>
             </tr>
             <tr>
-              <td>Lender :</td>
+              <td>Energy Lender :</td>
               <td>
                 {this.state.currentLoan ? this.state.currentLoan.lender : null}
               </td>
             </tr>
             <tr>
-              <td>Deposit Required :</td>
+              <td>Bid Amount Required :</td>
               <td>
                 {this.state.currentLoan
                   ? web3.utils.fromWei(this.state.currentLoan.requiredDeposit)
@@ -462,7 +462,7 @@ class App extends Component {
               </td>
             </tr>
             <tr>
-              <td>Loan Status :</td>
+              <td>Energy Trade Status :</td>
               <td>
                 {this.state.currentLoan
                   ? this.state.status[this.state.currentLoan.status]
@@ -478,7 +478,7 @@ class App extends Component {
           variant="contained"
           color="default"
         >
-          Pay Deposit
+          Pay Bid Amount
         </Button>
         <div>
           <input
@@ -496,11 +496,11 @@ class App extends Component {
           variant="contained"
           color="primary"
         >
-          Retrieve Funds
+          Trade Energy
         </Button>
 
         <Button onClick={this.payBackLoan} variant="contained" color="">
-          Pay Off Loan
+          Trade Back Energy  
         </Button>
 
         <div>
@@ -515,10 +515,10 @@ class App extends Component {
 
         <form className="create-loan-form">
           <div className="form-contents">
-            <h1>Create a Loan</h1>
+            <h1>Create Energy</h1>
             <hr></hr>
 
-            <label htmlFor="interest">Interest Amount</label>
+            <label htmlFor="interest">Trade Interest Amount</label>
             <input
               autoComplete="off"
               name="interest"
@@ -534,7 +534,7 @@ class App extends Component {
               id="borrower"
               onChange={this.handleInput}
             />
-            <label htmlFor="depositPercentage">Deposit Percentage (%)</label>
+            <label htmlFor="depositPercentage">Bid Percentage (%)</label>
             <input
               autoComplete="off"
               name="depositPercentage"
@@ -542,7 +542,7 @@ class App extends Component {
               id="depositPercentage"
               onChange={this.handleInput}
             />
-            <label htmlFor="amount">Value of the Loan</label>
+            <label htmlFor="amount">Total Energy Amount</label>
             <input
               autoComplete="off"
               name="amount"
@@ -551,9 +551,9 @@ class App extends Component {
               onChange={this.handleInput}
             />
             <div className="LoanId-info">
-              <p id="loanCounter"> Loan ID: {this.state.currentLoanId}</p>
+              <p id="loanCounter">Trade ID: {this.state.currentLoanId}</p>
               <p id="loanCounterInfo">
-                Loan ID's can be used to retrieve loans assigned the that ID
+                Trade ID's can be used to retrieve energy trades assigned to that ID
               </p>
             </div>
           </div>
